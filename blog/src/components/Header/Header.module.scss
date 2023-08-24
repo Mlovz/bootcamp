@@ -1,0 +1,24 @@
+.header {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+  width: 35px;
+  height: 35px;
+  background: var(--red_500);
+  border-radius: 100%;
+}
+
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}

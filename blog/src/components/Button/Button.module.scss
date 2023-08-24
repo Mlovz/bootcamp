@@ -1,0 +1,22 @@
+.btn {
+  background: var(--red_500);
+  color: #fff;
+  padding: 8px 28px;
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid transparent;
+}
+
+.max {
+  width: 100%;
+}
+
+.outline {
+  background: transparent;
+  border: 1px solid var(--red_500);
+  color: var(--red_500);
+}
