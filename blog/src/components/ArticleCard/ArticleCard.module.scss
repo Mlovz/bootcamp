@@ -1,0 +1,43 @@
+.articleCard {
+  border: 1px solid var(--gray_100);
+  border-radius: 5px;
+  background: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+
+  &:hover {
+    .icon {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.header {
+  // display: flex;
+  // align-items: flex-start;
+  // justify-content: space-between;
+}
+
+.icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+  &:hover {
+    border: 1px solid var(--gray_100);
+  }
+}

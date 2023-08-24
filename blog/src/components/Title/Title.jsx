@@ -15,7 +15,7 @@ export const TitleFw = {
   fw700: 700,
 };
 
-const Title = ({ as, size, fw, children, className }) => {
+const Title = ({ as = "p", size, fw, color, children, className }) => {
   const sizesClasses = {
     12: cls.size12,
     14: cls.size14,
@@ -49,7 +49,7 @@ const Title = ({ as, size, fw, children, className }) => {
       )}
       {as === "h2" && (
         <h2
-          className={`${cls.title}  ${className} ${sizesClasses[size]} ${fwClasses[fw]}`}
+          className={`${cls.title} ${cls[color]}  ${className} ${sizesClasses[size]} ${fwClasses[fw]}`}
         >
           {children}
         </h2>
