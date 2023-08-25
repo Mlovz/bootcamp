@@ -5,6 +5,7 @@ import Register from "./pages/Auth/Register";
 import HomePage from "./pages/HomePage/HomePage";
 import DetailPage from "./pages/DetailPage/DetailPage";
 import AddPostPage from "./pages/AddPostPage/AddPostPage";
+import { $api, serviceApi } from "api";
 
 function App() {
   return (

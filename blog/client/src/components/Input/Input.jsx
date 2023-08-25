@@ -3,7 +3,7 @@ import cls from "./input.module.scss";
 
 const Input = ({
   type = "text",
-  value = "",
+  value,
   onChange,
   placeholder,
   name,
@@ -14,7 +14,7 @@ const Input = ({
       type={type}
       placeholder={placeholder}
       name={name}
-      value={value}
+      value={value || ""}
       onChange={onChange}
       className={`${cls.field} ${className}`}
     />
