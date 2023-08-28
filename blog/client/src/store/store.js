@@ -1,33 +1,9 @@
 import { createStore, combineReducers } from "redux";
-
-const initialState = {
-  user: null,
-};
-
-const userReducer = (state = initialState, action) => {
-  if (action.type === "A") {
-    return {
-      ...state,
-      user: {
-        username: action.payload,
-      },
-    };
-  }
-
-  return state;
-};
-
-const articleReducer = (state = initialState2, action) => {
-  return state;
-};
-
-const initialState2 = {
-  artilces: null,
-};
+import { authReducer } from "./reducers/authReducer";
+import { composeWithDevTools } from "redux-devtools-extension";
 
 const rootReducers = combineReducers({
-  userReducer: userReducer,
-  articleReducer: articleReducer,
+  auth: authReducer,
 });
 
-export const store = createStore(rootReducers);
+export const store = createStore(rootReducers, composeWithDevTools());
