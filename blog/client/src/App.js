@@ -6,8 +6,14 @@ import HomePage from "./pages/HomePage/HomePage";
 import DetailPage from "./pages/DetailPage/DetailPage";
 import AddPostPage from "./pages/AddPostPage/AddPostPage";
 import { $api, serviceApi } from "api";
+import { classNames } from "utils/classNames";
+
+import cls from "./app.module.scss";
+import { useState } from "react";
 
 function App() {
+  const [open, setOpen] = useState(true);
+
   return (
     <div className="App">
       <Header />

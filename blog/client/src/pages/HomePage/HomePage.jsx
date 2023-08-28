@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import cls from "./HomePage.module.scss";
 import ArticleCard from "../../components/ArticleCard/ArticleCard";
 import Title from "../../components/Title/Title";
+import { useSelector } from "react-redux";
 
 const HomePage = () => {
   // const [posts, setPosts] = useState([]);
