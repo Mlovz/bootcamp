@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import cls from "./auth.module.scss";
-import { Card, Title, Form, Input, Button } from "../../components";
-import { TitleFw, TitleSize } from "../../components/Title/Title";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
+import { login } from "store/actions/authAction";
+import { Button, Card, Form, Input, Title } from "../../components";
+import { TitleFw, TitleSize } from "../../components/Title/Title";
+import cls from "./auth.module.scss";
 
 const Login = () => {
   const [userData, setUserData] = useState({
@@ -25,32 +25,12 @@ const Login = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(123);
-
-    try {
-      dispatch({ type: "LOADING", payload: true });
-
-      const res = await axios.post("http://localhost:5000/api/login", userData);
-      console.log(res);
-
-      if (res.data) {
-        dispatch({
-          type: "AUTH",
-          payload: {
-            user: res.data.user,
-            token: res.data.access_token,
-          },
-        });
-        dispatch({ type: "LOADING", payload: false });
-      }
-    } catch (err) {
-      dispatch({ type: "LOADING", payload: false });
-    }
+    dispatch(login(userData));
   };
 
   return (
     <Card className={cls.auth}>
-      <Title as="h1" size={TitleSize.size24} fw={TitleFw.fw700}>
+      <Title color="red" as="h1" size={TitleSize.size24} fw={TitleFw.fw700}>
         Войти
       </Title>
 

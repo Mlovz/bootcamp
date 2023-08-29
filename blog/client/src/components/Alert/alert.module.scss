@@ -1,0 +1,32 @@
+.toast {
+  position: fixed;
+  top: 100px;
+  right: -100%;
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+  transition: all 0.4s;
+  &.success {
+    right: 50px;
+    background: #00d24d;
+  }
+
+  &.error {
+  }
+
+  .close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    line-height: 10px;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+  }
+}

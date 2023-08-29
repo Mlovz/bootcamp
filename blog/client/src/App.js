@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import DetailPage from "./pages/DetailPage/DetailPage";
 import AddPostPage from "./pages/AddPostPage/AddPostPage";
 import { useState } from "react";
+import Alert from "components/Alert/Alert";
 
 function App() {
   const [open, setOpen] = useState(true);
@@ -13,6 +14,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <Alert />
       <main>
         <div className="container">
           <Routes>
