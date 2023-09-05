@@ -1,11 +1,13 @@
-import { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent, FormEvent } from "react";
 import { login } from "../../redux/actions/authAction";
 import cls from "./auth.module.scss";
 import { IStateUserData } from "@/types/auth";
-import { useAppDispatch } from "../../redux/store";
+import { useAppDispatch, useAppSelector } from "../../redux/store";
 
 const LoginPage = () => {
   const dispatch = useAppDispatch();
+
+  const { loading } = useAppSelector((state) => state.auth);
 
   const [userData, setUserData] = useState<IStateUserData>({
     username: "",
@@ -17,7 +19,8 @@ const LoginPage = () => {
     setUserData({ ...userData, [name]: value });
   };
 
-  const onSubmit = () => {
+  const onSubmit = (e: FormEvent) => {
+    e.preventDefault();
     dispatch(login(userData));
   };
 
@@ -37,7 +40,9 @@ const LoginPage = () => {
             placeholder="Password"
             onChange={handleChange}
           />
-          <button type="submit">Войти</button>
+          <button type="submit">
+            {loading ? "Са укхаз загрузк я хьун Йоакхап" : "Войти"}
+          </button>
         </form>
       </div>
     </div>
