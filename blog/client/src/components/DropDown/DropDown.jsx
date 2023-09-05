@@ -2,21 +2,11 @@ import React, { useState } from "react";
 import cls from "./DropDown.module.scss";
 import { Link } from "react-router-dom";
 
-const items = [
-  {
-    content: "Профиль",
-    path: "/profile",
-  },
-  {
-    content: "Сменить тему",
-    onClick: () => {},
-  },
-];
-
 const DropDown = ({ options, children }) => {
   const [open, setOpen] = useState(false);
 
-  const onOpen = () => {
+  const onOpen = (e) => {
+    e.preventDefault();
     setOpen(!open);
   };
 
@@ -25,11 +15,11 @@ const DropDown = ({ options, children }) => {
   };
 
   return (
-    <div className={cls.dropDown} onClick={onOpen} onBlur={onBlur} tabIndex={0}>
+    <div className={cls.dropDown} onClick={onOpen} tabIndex={0} onBlur={onBlur}>
       <button>{children}</button>
-      <ul>
-        {options.length > 0 ? (
-          items.map((option) => (
+      <ul className={`${cls.list} ${open ? cls.active : ""}`}>
+        {options?.length > 0 ? (
+          options.map((option) => (
             <li>
               {option.path ? (
                 <Link to={option.path}>{option.content}</Link>

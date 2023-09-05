@@ -3,6 +3,7 @@ import cls from "./ArticleCard.module.scss";
 import { Title } from "components";
 import Icon from "assets/Vector (2).svg";
 import { Link } from "react-router-dom";
+import DropDown from "components/DropDown/DropDown";
 
 const ArticleCard = ({ title, content, createdAt, id }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,22 +12,36 @@ const ArticleCard = ({ title, content, createdAt, id }) => {
     setIsOpen(!isOpen);
   };
 
+  const items = [
+    {
+      content: "Профиль",
+    },
+    {
+      content: "Сменить тему",
+      onClick: () => {
+        console.log(123);
+      },
+    },
+  ];
+
   return (
-    <Link to={`/detail/${id}`} className={cls.articleCard}>
+    <div className={cls.articleCard}>
       <div className={cls.header}>
         <Title color="red" as="h2" size={24} fw={700}>
           {title}
         </Title>
 
         <div className={cls.icon} onClick={onOpen}>
-          <img src={Icon} alt="" />
+          <DropDown options={items}>
+            <img src={Icon} alt="" />
+          </DropDown>
 
-          {isOpen && (
+          {/* {isOpen && (
             <ul className={cls.list}>
               <li className={cls.item}>Скопировать ссылку</li>
               <li className={cls.item}>Удалить</li>
             </ul>
-          )}
+          )} */}
         </div>
       </div>
 
@@ -34,7 +49,7 @@ const ArticleCard = ({ title, content, createdAt, id }) => {
         {createdAt}
       </Title>
       <Title fw={500}>{content}</Title>
-    </Link>
+    </div>
   );
 };
 

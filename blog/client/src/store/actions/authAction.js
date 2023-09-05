@@ -5,7 +5,6 @@ export const login = (userData) => async (dispatch) => {
     dispatch({ type: "LOADING", payload: true });
 
     const res = await axios.post("http://localhost:5000/api/login", userData);
-    console.log(res);
 
     if (res.data) {
       dispatch({
@@ -17,8 +16,12 @@ export const login = (userData) => async (dispatch) => {
       });
       dispatch({ type: "LOADING", payload: false });
       dispatch({ type: "SUCCESS", payload: "Успешное авторизация!" });
+
+      return res.data;
     }
   } catch (err) {
+    console.log(err.response.data.msg);
+    dispatch({ type: "ERROR", payload: err.response.data.msg });
     dispatch({ type: "LOADING", payload: false });
   }
 };

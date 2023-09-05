@@ -1,0 +1,16 @@
+.dropDown {
+  position: relative;
+}
+
+.list {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}

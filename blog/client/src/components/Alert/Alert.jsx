@@ -26,7 +26,7 @@ const Alert = () => {
 
   return (
     <>
-      {/* {loading && <Loading />} */}
+      {loading && <Loading />}
       <Toast
         message={error || success}
         status={error ? "error" : success ? "success" : ""}

@@ -4,12 +4,15 @@ import { login } from "store/actions/authAction";
 import { Button, Card, Form, Input, Title } from "../../components";
 import { TitleFw, TitleSize } from "../../components/Title/Title";
 import cls from "./auth.module.scss";
+import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = ({ name }) => {
   const [userData, setUserData] = useState({
     username: "",
     password: "",
   });
+
+  const navigate = useNavigate();
 
   const authData = useSelector((state) => state.auth);
 
@@ -25,7 +28,10 @@ const Login = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    dispatch(login(userData));
+    const res = await dispatch(login(userData, navigate));
+    if (res) {
+      navigate("/");
+    }
   };
 
   return (

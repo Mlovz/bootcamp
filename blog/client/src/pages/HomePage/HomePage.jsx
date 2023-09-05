@@ -5,16 +5,16 @@ import Title from "../../components/Title/Title";
 import { useSelector } from "react-redux";
 
 const HomePage = () => {
-  // const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState([]);
 
-  // useEffect(() => {
-  //   const getPosts = async () => {
-  //     const res = await fetch("http://localhost:5000/api/home/articles");
-  //     const data = await res.json();
-  //     setPosts(data.articles);
-  //   };
-  //   getPosts();
-  // }, []);
+  useEffect(() => {
+    const getPosts = async () => {
+      const res = await fetch("http://localhost:5000/api/home/articles");
+      const data = await res.json();
+      setPosts(data.articles);
+    };
+    getPosts();
+  }, []);
 
   return (
     <div className={cls.home}>
@@ -22,7 +22,7 @@ const HomePage = () => {
         Unusual blog
       </Title>
       <div className={cls.articles}>
-        {/* {posts.length > 0 ? (
+        {posts.length > 0 ? (
           posts.map((post) => (
             <ArticleCard
               title={post.title}
@@ -35,7 +35,7 @@ const HomePage = () => {
           <Title as="h2" size={24} fw={700}>
             Постов нет
           </Title>
-        )} */}
+        )}
       </div>
     </div>
   );

@@ -48,6 +48,11 @@ const articleCtrl = {
         "-password"
       );
 
+      await Article.findOneAndUpdate(
+        { _id: req.params.id },
+        { views: article.views + 1 }
+      );
+
       if (!article) return res.status(404).json({ msg: "Такой статьи нет" });
 
       return res.json(article);
@@ -55,6 +60,7 @@ const articleCtrl = {
       return res.status(500).json({ msg: err.message });
     }
   },
+
   getArticleByUser: async (req, res) => {
     try {
       const article = await Article.findById({ _id: req.user._id }).populate(
