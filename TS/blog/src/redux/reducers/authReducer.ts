@@ -1,4 +1,10 @@
-import { AUTH_TYPES, AuthSchema, IAuthType } from "../types/authTypes";
+import {
+  AUTH,
+  AUTH_LOADING,
+  AuthSchema,
+  IAuthType,
+  IAuthTypeLoading,
+} from "../types/authTypes";
 
 const initialState: AuthSchema = {
   user: null,
@@ -8,16 +14,16 @@ const initialState: AuthSchema = {
 
 export const authReducer = (
   state = initialState,
-  action: IAuthType
+  action: IAuthType | IAuthTypeLoading
 ): AuthSchema => {
   switch (action.type) {
-    case AUTH_TYPES.AUTH_LOADING:
+    case AUTH_LOADING:
       return {
         ...state,
         loading: action.payload.loading,
       };
 
-    case AUTH_TYPES.AUTH:
+    case AUTH:
       return {
         ...state,
         user: action.payload.user,

@@ -1,10 +1,11 @@
 import { Routes, Route } from "react-router-dom";
 import { HomePage, LoginPage, RegisterPage } from "./pages";
+import { Header } from "./components";
 
 function App() {
   return (
     <div className="App">
-      <header></header>
+      <Header />
 
       <main>
         <div className="container">

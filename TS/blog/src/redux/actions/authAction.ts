@@ -1,22 +1,25 @@
 import { $api } from "../../api";
-import { IStateUserData } from "@/types/auth";
+import { IStateUserData } from "../../types/auth";
 import { Dispatch } from "redux";
-import { AUTH_TYPES, LoginFetchData } from "../types/authTypes";
+import {
+  AUTH,
+  AUTH_LOADING,
+  IAuthType,
+  IAuthTypeLoading,
+  LoginFetchData,
+} from "../types/authTypes";
 
 export const login =
-  (userData: IStateUserData) => async (dispatch: Dispatch<any>) => {
+  (userData: IStateUserData) =>
+  async (dispatch: Dispatch<IAuthType | IAuthTypeLoading>) => {
     try {
-      console.log(userData);
-
-      dispatch({ type: AUTH_TYPES.AUTH_LOADING, payload: { loading: true } });
+      dispatch({ type: AUTH_LOADING, payload: { loading: true } });
 
       const res = await $api.post<LoginFetchData>("/login", userData);
 
-      console.log(res);
-
       if (res.data) {
         dispatch({
-          type: AUTH_TYPES.AUTH,
+          type: AUTH,
           payload: {
             user: res.data.user,
             token: res.data.access_token,
@@ -24,9 +27,9 @@ export const login =
         });
       }
 
-      dispatch({ type: AUTH_TYPES.AUTH_LOADING, payload: { loading: false } });
+      dispatch({ type: AUTH_LOADING, payload: { loading: false } });
     } catch (err) {
       // dispatch
-      dispatch({ type: AUTH_TYPES.AUTH_LOADING, payload: { loading: false } });
+      dispatch({ type: AUTH_LOADING, payload: { loading: false } });
     }
   };

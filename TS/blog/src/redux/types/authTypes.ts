@@ -18,15 +18,13 @@ export interface IUser {
 }
 
 export interface AuthSchema {
-  user: IUser | null;
-  token: string;
+  user?: IUser | null;
+  token?: string;
   loading?: boolean;
 }
 
-export const AUTH_TYPES: any = {
-  AUTH: "AUTH",
-  AUTH_LOADING: "AUTH_LOADING",
-};
+export const AUTH = "AUTH";
+export const AUTH_LOADING = "AUTH_LOADING";
 
 export interface LoginFetchData {
   msg: string;
@@ -35,6 +33,11 @@ export interface LoginFetchData {
 }
 
 export interface IAuthType {
-  type: typeof AUTH_TYPES;
+  type: typeof AUTH;
   payload: AuthSchema;
+}
+
+export interface IAuthTypeLoading {
+  type: typeof AUTH_LOADING;
+  payload: { loading: boolean };
 }
