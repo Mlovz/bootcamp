@@ -1,7 +1,10 @@
-import React from "react";
+import { FlexProps } from "./Flex";
+import Flex from "./Flex";
 
-const HStack = () => {
-  return <div>HStack</div>;
+type HStackProps = Omit<FlexProps, "direction">;
+
+const HStack = (props: HStackProps) => {
+  return <Flex direction="row" {...props} />;
 };
 
 export default HStack;

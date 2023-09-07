@@ -55,7 +55,16 @@ const articleCtrl = {
 
       if (!article) return res.status(404).json({ msg: "Такой статьи нет" });
 
-      return res.json(article);
+      const newArticles = await Article.find({
+        category: article.category,
+      }).limit(2);
+
+      const newData = newArticles.filter((item) => item._id !== article._id);
+
+      return res.json({
+        article,
+        newArticles: newData,
+      });
     } catch (err) {
       return res.status(500).json({ msg: err.message });
     }

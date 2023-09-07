@@ -7,6 +7,13 @@ import mongoose from "mongoose";
 import routes from "./routes";
 const app = express();
 
+app.use(async (req, res, next) => {
+  await new Promise((res) => {
+    setTimeout(res, 1000);
+    next();
+  });
+});
+
 //middleware
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));

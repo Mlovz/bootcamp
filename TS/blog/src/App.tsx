@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { HomePage, LoginPage, RegisterPage } from "./pages";
 import { Header } from "./components";
+import ArticleDetailPage from "./pages/ArticleDetailPage/ArticleDetailPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
+            <Route path="/article/:id" element={<ArticleDetailPage />} />
           </Routes>
         </div>
       </main>

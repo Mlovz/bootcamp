@@ -1,7 +1,10 @@
-import React from "react";
+import { FlexProps } from "./Flex";
+import Flex from "./Flex";
 
-const VStack = () => {
-  return <div>VStack</div>;
+type VStackProps = Omit<FlexProps, "direction">;
+
+const VStack = (props: VStackProps) => {
+  return <Flex direction="column" align="start" {...props} />;
 };
 
 export default VStack;

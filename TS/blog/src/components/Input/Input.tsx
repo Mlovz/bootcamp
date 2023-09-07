@@ -8,13 +8,12 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Input: FC<InputProps> = memo(
-  ({ className, type = "text", value, placeholder, disabled, onChange }) => {
+  ({ className, type = "text", disabled, onChange, ...rest }) => {
     return (
       <input
+        {...rest}
         type={type}
-        value={value}
         disabled={disabled}
-        placeholder={placeholder}
         onChange={onChange}
         className={classNames(cls.input, {}, [className || ""])}
       />

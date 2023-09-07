@@ -23,6 +23,7 @@ const Flex: FC<FlexProps> = ({
   justify = "start",
   direction = "row",
   max = false,
+  className,
   children,
 }) => {
   const gapClasses: Record<gapTypes, string> = {
@@ -67,6 +68,7 @@ const Flex: FC<FlexProps> = ({
           alignClasses[align],
           justifyClasses[justify],
           directionClasses[direction],
+          className,
         ]
       )}
     >

@@ -25,9 +25,9 @@ export const login =
             token: res.data.access_token,
           },
         });
+        dispatch({ type: AUTH_LOADING, payload: { loading: false } });
+        window.location.href = "/";
       }
-
-      dispatch({ type: AUTH_LOADING, payload: { loading: false } });
     } catch (err) {
       // dispatch
       dispatch({ type: AUTH_LOADING, payload: { loading: false } });
