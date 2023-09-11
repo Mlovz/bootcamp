@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { useAppDispatch } from "../../redux/store";
-import { getArticle } from "../../redux/actions/articleAction";
+import { ChangeEvent, useEffect } from "react";
 import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { ArticleCard } from "../../components";
+import { getArticle } from "../../redux/actions/articleAction";
 import {
   getArticleItem,
   getArticleSameItems,
 } from "../../redux/selectors/getArtilceItem";
-import { ArticleCard } from "../../components";
+import { useAppDispatch } from "../../redux/store";
 
 const ArticleDetailPage = () => {
   const dispatch = useAppDispatch();

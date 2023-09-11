@@ -8,6 +8,7 @@ import {
   IAuthTypeLoading,
   LoginFetchData,
 } from "../types/authTypes";
+import { tokenExp } from "../../utils/tokenExp";
 
 export const login =
   (userData: IStateUserData) =>
@@ -33,3 +34,20 @@ export const login =
       dispatch({ type: AUTH_LOADING, payload: { loading: false } });
     }
   };
+
+export const getUser = () => async (dispatch: Dispatch<any>) => {
+  const token = localStorage.getItem("token");
+
+  if (token) {
+    try {
+      const err = tokenExp(token);
+      if (err) {
+        localStorage.removeItem("token");
+        window.location.href = "/";
+        return;
+      }
+
+      // const res = await axios.get("");
+    } catch (err) {}
+  }
+};
