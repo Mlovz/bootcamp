@@ -1,22 +1,19 @@
 interface ILikes {
-    likes: string
+  likes: string;
 }
 
 interface IUser {
-    username: string,
-    age: number,
-    likes: ILikes[],
-    views: number,
-    createdAt: string
+  username: string;
+  age: number;
+  likes: ILikes[];
+  views: number;
+  createdAt: string;
 }
 
 const user: IUser = {
-    username: '',
-    age: 20,
-    likes: [],
-    views: 0,
-    createdAt: ''
-}
-
-
-
+  username: "",
+  age: 20,
+  likes: [],
+  views: 0,
+  createdAt: "",
+};
