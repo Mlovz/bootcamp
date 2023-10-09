@@ -6,6 +6,7 @@ import RegisterPage from "../pages/RegisterPage/ui/RegisterPage";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import Input from "../shared/ui/Input/Input";
 
 const App = () => {
   const auth = false;
@@ -39,22 +40,22 @@ const App = () => {
       <div className="container">
         <form onSubmit={handleSubmit(onLogin)}>
           <div>
-            <input
+            <Input
               type="text"
+              error={errors?.email?.message}
               placeholder="email"
               {...register("email")}
               value={watch("email")}
             />
-            <span>{errors?.email?.message}</span>
           </div>
           <div>
-            <input
+            <Input
               type="password"
+              error={errors?.password?.message}
               placeholder="password"
               {...register("password")}
               value={watch("password")}
             />
-            <span>{errors?.password?.message}</span>
           </div>
           <div>
             <button disabled={!isValid} type="submit">
