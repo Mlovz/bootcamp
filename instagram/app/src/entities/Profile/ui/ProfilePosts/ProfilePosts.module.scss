@@ -1,0 +1,14 @@
+.tabs {
+  border-top: 1px solid var(--gray-border);
+  padding: 20px 0;
+
+  .tab {
+    cursor: pointer;
+
+    &.active {
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+}

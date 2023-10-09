@@ -1,0 +1,56 @@
+@import "./variables/variables.scss";
+@import "./themes/dark.scss";
+@import "./themes/normal.scss";
+
+@mixin font($fname, $fstyle, $fweight, $furl) {
+  @font-face {
+    font-family: $fname;
+    font-style: $fstyle;
+    font-weight: $fweight;
+    src: url($furl) format("woff2");
+  }
+}
+
+@include font("TTNorms", normal, 400, "../fonts/TTNorms-Regular.woff2");
+@include font("TTNorms", normal, 500, "../fonts/TTNorms-Medium.woff2");
+@include font("TTNorms", normal, 700, "../fonts/TTNorms-Bold.woff2");
+@include font("TTNorms", normal, 800, "../fonts/TTNorms-ExtraBold.woff2");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "TTNorms";
+}
+
+button,
+input {
+  outline: none;
+  border: none;
+}
+
+input::placeholder {
+  font-family: "TTNorms";
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background: var(--theme-color);
+  color: var(--inverted-theme-color);
+  transition: all 0.3s;
+  min-height: 100vh;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}

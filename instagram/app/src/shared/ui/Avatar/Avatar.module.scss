@@ -1,0 +1,51 @@
+.avatar {
+  border-radius: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: cover;
+  }
+
+  &.size150 {
+    min-width: 150px;
+    min-height: 150px;
+    max-width: 150px;
+    max-height: 150px;
+    height: 150px;
+  }
+
+  &.size56 {
+    min-width: 56px;
+    min-height: 56px;
+    max-width: 56px;
+    max-height: 56px;
+    height: 56px;
+  }
+
+  &.size32 {
+    min-width: 32px;
+    min-height: 32px;
+    max-width: 32px;
+    max-height: 32px;
+    height: 32px;
+  }
+
+  &.size22 {
+    min-width: 22px;
+    min-height: 22px;
+    max-width: 22px;
+    max-height: 22px;
+    height: 22px;
+  }
+
+  &.story {
+    padding: 2px;
+    border: 2px solid #ef3b74;
+  }
+  &.personal {
+    padding: 2px;
+    border: 2px solid var(--gray-border);
+  }
+}

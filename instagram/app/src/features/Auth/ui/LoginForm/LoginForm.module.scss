@@ -1,0 +1,36 @@
+.login {
+  margin-top: 100px;
+  background: var(--theme-color-light);
+  max-width: 350px;
+  width: 100%;
+
+  .logo {
+    &.theme {
+      filter: invert(100%);
+    }
+  }
+
+  .card {
+    border: 1px solid var(--gray-border);
+
+    &:first-child {
+      padding: 45px;
+    }
+
+    &:last-child {
+      padding: 25px;
+    }
+  }
+
+  .line {
+    width: 108px;
+    height: 1px;
+    background: var(--gray-border);
+  }
+
+  .forgot {
+    span:hover {
+      color: var(--inverted-theme-color);
+    }
+  }
+}

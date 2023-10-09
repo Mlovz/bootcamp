@@ -1,0 +1,16 @@
+.navbar {
+  border-bottom: 1px solid var(--border_gray);
+  background: var(--theme-color-light);
+
+  .wrap {
+    height: 50px;
+  }
+
+  .logo {
+    &.theme {
+      img {
+        filter: invert(100%);
+      }
+    }
+  }
+}

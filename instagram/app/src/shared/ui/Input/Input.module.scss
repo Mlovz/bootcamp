@@ -1,0 +1,71 @@
+.field {
+  position: relative;
+  width: 100%;
+
+  &.fieldError {
+    input {
+      background: var(--theme-color-light);
+      color: var(--red_200);
+
+      &::placeholder {
+        color: var(--red_200);
+      }
+      &:focus {
+        border: 1px solid var(--red_200);
+      }
+    }
+
+    .placeh {
+      color: var(--red_200);
+    }
+  }
+
+  input {
+    border-radius: 3px;
+    border: 1px solid var(--gray-border);
+    background: var(--theme-color-light);
+    width: 100%;
+    padding: 9px 7px;
+    transition: all 0.2s;
+    color: var(--gray-color);
+
+    &:focus {
+      border: 1px solid var(--inverted-gray-color);
+    }
+  }
+
+  .placeh {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 12px;
+    pointer-events: none;
+    transition: all 0.1s;
+
+    &.valueActive {
+      top: 0px;
+      background: var(--theme-color-light);
+      padding: 0px 5px;
+      font-size: 10px;
+    }
+  }
+
+  .showPass {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--gray-color);
+    &:hover {
+      color: var(--inverted-theme-color);
+    }
+  }
+  .error {
+    position: absolute;
+    bottom: -16px;
+    color: #fd8a8a;
+    font-size: 10px;
+  }
+}

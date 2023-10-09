@@ -1,0 +1,29 @@
+.menu {
+  position: absolute;
+  z-index: 10000;
+  flex-direction: column;
+  display: flex;
+  padding: 10px;
+}
+
+.link {
+  color: var(--gray-color);
+}
+
+
+.item {
+  display: flex;
+  padding: 6px 9px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  background: transparent;
+  color: var(--gray-color);
+  &:hover {
+    color: var(--inverted-theme-color);
+  }
+
+  &:disabled{
+    opacity: .5;
+  }
+}
