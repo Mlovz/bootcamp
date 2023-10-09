@@ -1,0 +1,24 @@
+.addComment {
+  margin-top: 10px;
+  border-top: 1px solid var(--gray-border);
+  .form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    input {
+      width: 100%;
+      padding: 13px 0;
+      background: transparent;
+    }
+  }
+
+  .icon {
+    padding: 14px;
+  }
+
+  .btn {
+    padding: 13px;
+  }
+}

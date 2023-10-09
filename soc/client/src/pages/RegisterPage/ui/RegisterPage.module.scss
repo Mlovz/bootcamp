@@ -1,0 +1,23 @@
+.register {
+  margin-top: 50px;
+  background: #fff;
+  max-width: 350px;
+  width: 100%;
+  .card {
+    border: 1px solid var(--gray-border);
+
+    &:first-child {
+      padding: 15px 45px;
+    }
+
+    &:last-child {
+      padding: 25px;
+    }
+  }
+
+  .line {
+    width: 108px;
+    height: 1px;
+    background: var(--gray-border);
+  }
+}

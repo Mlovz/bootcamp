@@ -1,0 +1,7 @@
+.posts {
+  > div {
+    &:first-child {
+      border-top: none;
+    }
+  }
+}
