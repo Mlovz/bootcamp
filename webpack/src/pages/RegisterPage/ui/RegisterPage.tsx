@@ -4,9 +4,7 @@ import cls from "./Register.module.scss";
 const RegisterPage = () => {
   return (
     <div>
-      <h1>info</h1>
-
-      <h2>tabs</h2>
+      <h1>RegisterPage</h1>
     </div>
   );
 };

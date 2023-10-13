@@ -20,6 +20,7 @@ import { useSelector } from "react-redux";
 import { useTheme } from "@/shared/lib/hooks/useTheme";
 import { classNames } from "@/shared/lib";
 import { Theme } from "@/shared/consts/theme";
+import { getRouteForgot, getRouteRegister } from "@/shared/consts/router";
 
 const LoginForm = () => {
   const { register, watch, handleSubmit, errors, isValid, LoginFieldsNames } =
@@ -161,7 +162,7 @@ const LoginForm = () => {
             Войти через facebook
           </Button>
 
-          <AppLink to="/forgot" className={cls.forgot}>
+          <AppLink to={getRouteForgot()} className={cls.forgot}>
             <Text size={12} fw={500} as="span" color="solid">
               Забыли пароль?
             </Text>
@@ -172,7 +173,7 @@ const LoginForm = () => {
           <Text size={12} as="p">
             У вас еще нет аккаунта?{" "}
           </Text>
-          <AppLink to="/register">
+          <AppLink to={getRouteRegister()}>
             <Text size={12} as="span" color="blue">
               Зарегистрироваться
             </Text>
