@@ -1,7 +1,8 @@
 import { authReducer } from "@/features/Auth/model/slice/authSlice";
-import { configureStore } from "@reduxjs/toolkit";
+import { ReducersMapObject, configureStore } from "@reduxjs/toolkit";
+import { StateSchema } from "./StateSchema";
 
-const rootReducers: any = {
+const rootReducers: ReducersMapObject<StateSchema> = {
   auth: authReducer,
 };
 

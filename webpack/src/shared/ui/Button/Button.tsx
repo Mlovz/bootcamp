@@ -13,6 +13,7 @@ export const Button: FC<ButtonProps> = ({
   children,
   variant = "default",
   max = false,
+  ...rest
 }) => {
   const variantClasses: Record<ButtonVariant, string> = {
     default: cls.default,
@@ -26,6 +27,8 @@ export const Button: FC<ButtonProps> = ({
   const classes = [variant && variantClasses[variant]];
 
   return (
-    <button className={classNames(cls.btn, mods, classes)}>{children}</button>
+    <button className={classNames(cls.btn, mods, classes)} {...rest}>
+      {children}
+    </button>
   );
 };

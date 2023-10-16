@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { AuthSchema } from "../type/auth";
+import { login } from "../service/loginByEmail";
 
 const initialState: AuthSchema = {
   user: null,
@@ -17,6 +18,19 @@ const authSlice = createSlice({
     setAuthLoading: (state, action) => {
       state.loading = action.payload;
     },
+  },
+  extraReducers(builder) {
+    builder
+      .addCase(login.pending, (state, action) => {
+        state.loading = true;
+      })
+      .addCase(login.fulfilled, (state, action) => {
+        state.loading = false;
+        state.user = action.payload.user;
+      })
+      .addCase(login.rejected, (state, action) => {
+        state.loading = false;
+      });
   },
 });
 
