@@ -1,10 +1,10 @@
-import { Navbar } from "@/widgets";
-import AppRouter from "./providers/RouteProvider/ui/AppRouter";
-import { Suspense, useEffect } from "react";
-import { useAppDispatch } from "@/shared/lib/useAppDispatch/useAppDispatch";
 import { getAuthData, refreshToken } from "@/entities/User";
-import { useSelector } from "react-redux";
 import { useTheme } from "@/shared/lib/hooks/useTheme";
+import { useAppDispatch } from "@/shared/lib/useAppDispatch/useAppDispatch";
+import { Navbar } from "@/widgets";
+import { Suspense, useEffect } from "react";
+import { useSelector } from "react-redux";
+import AppRouter from "./providers/RouteProvider/ui/AppRouter";
 
 const App = () => {
   const dispatch = useAppDispatch();
