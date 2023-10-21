@@ -1,0 +1,40 @@
+@import "./themes/dark.scss";
+@import "./themes/normal.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "TTNorms";
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+}
+
+input::placeholder {
+  font-family: "TTNorms";
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+body {
+  background: var(--main-color);
+  color: var(--inverted-main-color);
+  transition: all 0.2s;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
