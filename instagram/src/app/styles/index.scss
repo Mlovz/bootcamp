@@ -5,7 +5,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "TTNorms";
+  // необходимо изменить
+  // font-family: "TTNorms";
+  font-family: "Consolas";
 }
 
 button,
@@ -15,7 +17,9 @@ input {
 }
 
 input::placeholder {
-  font-family: "TTNorms";
+  // необходимо изменить
+  // font-family: "TTNorms";
+  font-family: "Consolas";
 }
 
 a {

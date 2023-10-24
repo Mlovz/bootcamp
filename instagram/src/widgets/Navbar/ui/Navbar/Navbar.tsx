@@ -1,7 +1,7 @@
 import cls from "./Navbar.module.scss";
 import { NavSearch, NavMenu } from "../";
 import Logo from "@/shared/assets/Logo.png";
-import { Button } from "@/shared/ui";
+import { Button, Text } from "@/shared/ui";
 
 export const Navbar = () => {
   return (
@@ -10,7 +10,11 @@ export const Navbar = () => {
         <div className={cls.wrap}>
           <img src={Logo} alt="" />
 
-          <Button>asdasdsad</Button>
+          <Text fw={300} as="span" size={24}>
+            asdassdasdasdasdad
+          </Text>
+
+          {/* <Button variant="outline">asdasdsad</Button> */}
 
           <NavSearch />
           <NavMenu />

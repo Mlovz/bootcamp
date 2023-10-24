@@ -1,0 +1,26 @@
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 9px;
+  border-radius: 4px;
+
+  &:disabled {
+  }
+
+  &.default {
+    background: var(--blue_500);
+    color: #fff;
+  }
+  &.outline {
+    border: 1px solid var(--border);
+    color: var(--text-color);
+    background: transparent;
+  }
+  &.disabled {
+  }
+
+  &.max {
+    width: 100%;
+  }
+}
