@@ -1,8 +1,9 @@
+import { useContext } from "react";
 import { Navbar } from "../widgets";
 
 const App = () => {
   return (
-    <div className="app app_dark">
+    <div className="app">
       <Navbar />
     </div>
   );

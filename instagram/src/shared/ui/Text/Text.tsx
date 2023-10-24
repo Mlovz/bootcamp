@@ -6,6 +6,7 @@ export type AsType = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "span" | "p";
 export type TextSize = 10 | 12 | 13 | 14 | 16 | 18 | 24;
 export type TextFw = 300 | 400 | 500 | 600 | 700 | 800;
 export type TextAlign = "center" | "left" | "right";
+export type TextColor = "default" | "gray";
 
 const sizeClasess: Record<TextSize, string> = {
   10: cls.size10,
@@ -32,6 +33,11 @@ const alignClasess: Record<TextAlign, string> = {
   right: cls.right,
 };
 
+const colorClasess: Record<TextColor, string> = {
+  default: cls.default,
+  gray: cls.gray,
+};
+
 interface TextProps {
   children: ReactNode;
   as?: AsType;
@@ -39,15 +45,25 @@ interface TextProps {
   fw?: TextFw;
   className?: string;
   align?: TextAlign;
+  color?: TextColor;
 }
 
 export const Text: FC<TextProps> = (props) => {
-  const { children, as = "h2", size, fw, className = "", align } = props;
+  const {
+    children,
+    as = "h2",
+    size = 14,
+    fw = 300,
+    className = "",
+    align,
+    color = "gray",
+  } = props;
 
   const classes = [
     size && sizeClasess[size],
     fw && fWClasess[fw],
     align && alignClasess[align],
+    color && colorClasess[color],
     className,
   ];
 
