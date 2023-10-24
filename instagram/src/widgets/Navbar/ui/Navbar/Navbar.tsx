@@ -1,13 +1,16 @@
-import React from "react";
 import cls from "./Navbar.module.scss";
 import { NavSearch, NavMenu } from "../";
+import Logo from "@/shared/assets/Logo.png";
+import { Button } from "@/shared/ui";
 
 export const Navbar = () => {
   return (
     <div className={cls.navbar}>
       <div className="container">
         <div className={cls.wrap}>
-          <h1>Logo</h1>
+          <img src={Logo} alt="" />
+
+          <Button>asdasdsad</Button>
 
           <NavSearch />
           <NavMenu />

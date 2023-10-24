@@ -63,11 +63,26 @@ export default (env: BuildEnv) => {
             "sass-loader",
           ],
         },
+        {
+          test: /\.(png|jpe?g|gif)$/i,
+          use: [
+            {
+              loader: "file-loader",
+            },
+          ],
+        },
+        {
+          test: /\.svg$/,
+          use: ["@svgr/webpack"],
+        },
       ],
     },
 
     resolve: {
       extensions: [".tsx", ".ts", ".js"],
+      alias: {
+        "@": path.resolve(__dirname, "src"),
+      },
     },
 
     devtool: isDev ? "inline-source-map" : undefined,
