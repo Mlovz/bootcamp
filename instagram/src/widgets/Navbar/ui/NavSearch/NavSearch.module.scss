@@ -6,6 +6,7 @@
   height: 28px;
   position: relative;
   border-radius: 3px;
+  background: var(--main-color-body);
 
   .text {
     display: flex;
@@ -22,7 +23,9 @@
     flex: 1;
     height: 100%;
     border-radius: inherit;
+    background: transparent;
 
     padding: 0 6px;
+    color: var(--inverted-main-color);
   }
 }

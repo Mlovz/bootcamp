@@ -1,5 +1,5 @@
 .navbar {
-  border-bottom: 1px solid #bdbdbd;
+  border-bottom: 1px solid var(--border);
 }
 
 .wrap {
@@ -7,4 +7,8 @@
   align-items: center;
   justify-content: space-between;
   height: 53px;
+}
+
+.dark{
+  filter: invert(100%);
 }

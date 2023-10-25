@@ -1,3 +1,4 @@
+import { LOCAL_STORAGE_THEME } from "@/shared/consts/localstorage";
 import { Theme } from "@/shared/consts/theme";
 import {
   FC,
@@ -14,21 +15,21 @@ interface IThemeContext {
 
 interface IThemeValues {
   theme?: Theme;
-  setTheme?: () => void;
+  setTheme?: (theme?: Theme) => void;
 }
 
-export const ThemeContext = createContext<any>({});
+export const ThemeContext = createContext<IThemeValues>({});
 
 export const ThemeProvider: FC<IThemeContext> = ({ children }) => {
-  const fallbackTheme = localStorage.getItem("theme");
+  const fallbackTheme = localStorage.getItem(LOCAL_STORAGE_THEME) as Theme;
 
   const initialState = fallbackTheme || Theme.LIGHT;
 
-  const [theme, setTheme] = useState(initialState);
+  const [theme, setTheme] = useState<Theme>(initialState);
 
   useEffect(() => {
     document.body.className = theme;
-    localStorage.setItem("theme", theme);
+    localStorage.setItem(LOCAL_STORAGE_THEME, theme);
   }, [theme]);
 
   const defaultTheme = useMemo(() => {

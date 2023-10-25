@@ -4,6 +4,8 @@ import Search from "@/shared/assets/svg/Search.svg";
 import Favorite from "@/shared/assets/svg/Favorite.svg";
 import FindPeople from "@/shared/assets/svg/FindPeople.svg";
 import NewPosts from "@/shared/assets/svg/NewPosts.svg";
+import Dark from "@/shared/assets/svg/Dark.svg";
+import Light from "@/shared/assets/svg/Light.svg";
 
 export type IconType =
   | "Home"
@@ -11,6 +13,8 @@ export type IconType =
   | "Search"
   | "Favorite"
   | "FindPeople"
+  | "Dark"
+  | "Light"
   | "NewPosts";
 
 export const iconName: Record<IconType, JSX.Element> = {
@@ -20,4 +24,6 @@ export const iconName: Record<IconType, JSX.Element> = {
   Favorite: <Favorite />,
   FindPeople: <FindPeople />,
   NewPosts: <NewPosts />,
+  Light: <Light />,
+  Dark: <Dark />,
 };
