@@ -8,6 +8,9 @@ import { SwitchButton } from "@/features";
 import { classNames } from "@/shared/lib/classNames";
 // import { nanMenuItems } from "../../model/consts/navMenu";
 
+import {Link} from 'react-router-dom'
+import { LangSwitch } from "@/widgets/LangSwitch/ui/LangSwitch";
+
 export const NavMenu = () => {
   const {theme} = useContext(ThemeContext)
   
@@ -18,14 +21,14 @@ export const NavMenu = () => {
       iconType: "Home",
     },
     {
-      href: "/",
+      href: "/login",
       iconType: "Messenger",
     },
     {
       iconType: "NewPosts",
     },
     {
-      href: "/",
+      href: "/register",
       iconType: "FindPeople",
     },
     {
@@ -40,9 +43,9 @@ export const NavMenu = () => {
         {nanMenuItems.map((item) => (
           <li key={item.iconType} className={classNames(cls.item, {[cls.dark]: theme === Theme.DARK}, [])}>
             {item.href ? (
-              <a href={item.href} className={cls.link}>
+              <Link to={item.href} className={cls.link}>
                 <Icon type={item.iconType} />
-              </a>
+              </Link>
             ) : (
               <Icon type={item.iconType} />
             )}
@@ -51,6 +54,10 @@ export const NavMenu = () => {
 
         <li className={classNames('', {[cls.dark]: theme === Theme.DARK}, [])}>
           <SwitchButton />
+        </li>
+
+        <li>
+          <LangSwitch/>
         </li>
 
         <li>
