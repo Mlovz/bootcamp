@@ -1,0 +1,56 @@
+@import "./themes/dark";
+@import "./themes/normal";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  // необходимо изменить
+  // font-family: "TTNorms";
+  font-family: Consolas;
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+}
+
+input::placeholder {
+  // необходимо изменить
+  // font-family: "TTNorms";
+  font-family: Consolas;
+}
+
+svg {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+body {
+  background: var(--main-color);
+  color: var(--inverted-main-color);
+  transition: all 0.2s;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.spinner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
