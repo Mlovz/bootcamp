@@ -6,7 +6,7 @@ export type AsType = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "span" | "p";
 export type TextSize = 10 | 12 | 13 | 14 | 16 | 18 | 24;
 export type TextFw = 300 | 400 | 500 | 600 | 700 | 800;
 export type TextAlign = "center" | "left" | "right";
-export type TextColor = "default" | "gray" | 'blue';
+export type TextColor = "default" | "gray" | "blue" | "error";
 
 const sizeClasess: Record<TextSize, string> = {
   10: cls.size10,
@@ -15,7 +15,7 @@ const sizeClasess: Record<TextSize, string> = {
   14: cls.size14,
   16: cls.size16,
   18: cls.size18,
-  24: cls.size24
+  24: cls.size24,
 };
 
 const fWClasess: Record<TextFw, string> = {
@@ -24,29 +24,30 @@ const fWClasess: Record<TextFw, string> = {
   500: cls.fw500,
   600: cls.fw600,
   700: cls.fw700,
-  800: cls.fw800
+  800: cls.fw800,
 };
 
 const alignClasess: Record<TextAlign, string> = {
   center: cls.center,
   left: cls.left,
-  right: cls.right
+  right: cls.right,
 };
 
 const colorClasess: Record<TextColor, string> = {
   default: cls.default,
   gray: cls.gray,
-  blue: cls.blue
+  blue: cls.blue,
+  error: cls.error,
 };
 
 interface TextProps {
-  children: ReactNode
-  as?: AsType
-  size?: TextSize
-  fw?: TextFw
-  className?: string
-  align?: TextAlign
-  color?: TextColor
+  children: ReactNode;
+  as?: AsType;
+  size?: TextSize;
+  fw?: TextFw;
+  className?: string;
+  align?: TextAlign;
+  color?: TextColor;
 }
 
 export const Text: FC<TextProps> = (props) => {
@@ -57,7 +58,7 @@ export const Text: FC<TextProps> = (props) => {
     fw = 300,
     className = "",
     align,
-    color = "gray"
+    color = "gray",
   } = props;
 
   const classes = [
@@ -65,7 +66,7 @@ export const Text: FC<TextProps> = (props) => {
     fw && fWClasess[fw],
     align && alignClasess[align],
     color && colorClasess[color],
-    className
+    className,
   ];
 
   const getAS = {
@@ -76,7 +77,7 @@ export const Text: FC<TextProps> = (props) => {
     h5: <h5 className={classNames("", {}, classes)}>{children}</h5>,
     h6: <h6 className={classNames("", {}, classes)}>{children}</h6>,
     span: <span className={classNames("", {}, classes)}>{children}</span>,
-    p: <p className={classNames("", {}, classes)}>{children}</p>
+    p: <p className={classNames("", {}, classes)}>{children}</p>,
   };
 
   return getAS[as];

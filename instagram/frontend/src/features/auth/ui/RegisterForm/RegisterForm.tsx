@@ -16,14 +16,31 @@ import {
   RegisterFormValues,
   useRegisterForm,
 } from "../../model/schema/useRegisterForm";
+import { registerByEmail } from "../../model/service/registerByEmail";
+import { useAppDispatch } from "@/shared/hooks/useAppDispatch";
+import { useSelector } from "react-redux";
+import { getAuthError } from "../../model/selectors/getAuthError";
+import { useNavigate } from "react-router-dom";
+import { getAuthLoading } from "../../model/selectors/getAuthLoading";
 
 export const RegisterForm = () => {
   const { theme } = useContext(ThemeContext);
   const { register, watch, errors, isValid, RegisterFormNames, handleSubmit } =
     useRegisterForm();
 
-  const onSubmit = (data: RegisterFormValues) => {
-    console.log(data);
+  const dispatch = useAppDispatch();
+
+  const authError = useSelector(getAuthError);
+  const authLoading = useSelector(getAuthLoading);
+
+  const navigate = useNavigate();
+
+  const onSubmit = async (data: RegisterFormValues) => {
+    const res = await dispatch(registerByEmail(data));
+
+    if (res.meta.requestStatus === "fulfilled") {
+      navigate("/login");
+    }
   };
 
   return (
@@ -112,6 +129,7 @@ export const RegisterForm = () => {
                 type="password"
                 placeholder="Повторите пароль"
               />
+              {authError && <Text color="error">{authError}</Text>}
 
               <Text align="center">
                 Регистрируясь, вы принимаете Условия. Прочитайте Политика
@@ -121,7 +139,12 @@ export const RegisterForm = () => {
                 подобные технологии.
               </Text>
 
-              <Button type="submit" max disabled={!isValid}>
+              <Button
+                type="submit"
+                max
+                disabled={!isValid && authLoading}
+                loading={authLoading}
+              >
                 Регистрация
               </Button>
             </VStack>

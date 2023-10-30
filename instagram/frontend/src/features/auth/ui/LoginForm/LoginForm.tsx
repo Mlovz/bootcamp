@@ -17,8 +17,12 @@ import {
   type LoginFormValues,
   useLoginForm,
 } from "../../model/schema/useLoginForm";
-
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "@/shared/hooks/useAppDispatch";
+import { loginByEmail } from "../../model/service/loginByEmail";
+import { useSelector } from "react-redux";
+import { getAuthError } from "../../model/selectors/getAuthError";
+import { getAuthLoading } from "../../model/selectors/getAuthLoading";
+import { useNavigate } from "react-router-dom";
 
 export const LoginForm = () => {
   const { theme } = useContext(ThemeContext);
@@ -27,15 +31,19 @@ export const LoginForm = () => {
   const { register, watch, isValid, handleSubmit, errors, LoginFormNames } =
     useLoginForm();
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
-  const onSubmit = (data: LoginFormValues) => {
-    console.log(data);
+  const authError = useSelector(getAuthError);
+  const authLoading = useSelector(getAuthLoading);
 
-    // dispatch(onLogin());
+  const onSubmit = async (data: LoginFormValues) => {
+    const res = await dispatch(loginByEmail(data));
+
+    if (res.meta.requestStatus === "fulfilled") {
+      navigate("/");
+    }
   };
-
-  const onLogin = () => {};
 
   return (
     <HStack justify="center">
@@ -44,6 +52,7 @@ export const LoginForm = () => {
           <img className={Theme.DARK === theme && cls.dark} src={Logo} alt="" />
           <Form onSubmit={handleSubmit(onSubmit)}>
             <VStack gap={16} align="center">
+              {authError && <Text color="error">{authError}</Text>}
               <Input
                 {...register(LoginFormNames.EMAIL)}
                 value={watch(LoginFormNames.EMAIL)}
@@ -59,7 +68,12 @@ export const LoginForm = () => {
                 placeholder={t("Пароль")}
               />
 
-              <Button type="submit" max disabled={!isValid}>
+              <Button
+                type="submit"
+                max
+                disabled={!isValid && authLoading}
+                loading={authLoading}
+              >
                 Войти
               </Button>
 

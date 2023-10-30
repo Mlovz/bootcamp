@@ -5,9 +5,18 @@
   gap: 7px;
   padding: 6px 9px;
   border-radius: 4px;
+  position: relative;
+  height: 30px;
 
   cursor: pointer;
   
+
+  .loading{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
   &:disabled {
     opacity: .6;
