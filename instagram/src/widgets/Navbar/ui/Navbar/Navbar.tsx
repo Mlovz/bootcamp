@@ -9,8 +9,6 @@ import { Theme } from "@/shared/consts/theme";
 export const Navbar = () => {
   const { theme } = useContext(ThemeContext);
 
-  
-
   return (
     <div className={cls.navbar}>
       <div className="container">
