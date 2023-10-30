@@ -1,0 +1,21 @@
+.auth{
+    margin-top: 80px;
+    max-width: 350px;
+    width: 100%;
+}
+
+.authTop{
+    border: 1px solid var(--border);
+    padding: 30px;
+    background: var(--main-color-body);
+}
+
+.authBottom{
+    border: 1px solid var(--border);
+    padding: 20px 10px;
+    background: var(--main-color-body);
+}
+
+.dark{
+    filter: invert(100%);
+}
