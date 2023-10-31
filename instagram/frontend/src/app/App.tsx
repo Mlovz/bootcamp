@@ -5,14 +5,16 @@ import { LoginLazyPage } from "@/pages/LoginPage/ui/LoginLazyPage";
 import { RegisterLazyPage } from "@/pages/RegisterPage/ui/RegisterLazyPage";
 import { Suspense } from "react";
 import { Spinner } from "@/shared/ui";
+import { useSelector } from "react-redux";
+import { getAuthData } from "@/entities/User";
 
 const App = () => {
-  const auth = false;
+  const isLogged = !!useSelector(getAuthData);
 
   return (
     <div className="app">
       <Suspense fallback="">
-        {auth && <Navbar />}
+        {isLogged && <Navbar />}
         <div className="container">
           <Suspense fallback={<Spinner className="spinner" />}>
             <Routes>

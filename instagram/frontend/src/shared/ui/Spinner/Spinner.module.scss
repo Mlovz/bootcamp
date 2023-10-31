@@ -2,7 +2,7 @@
     display: inline-block;
     position: relative;
     width: 80px;
-    height: 40px;
+    height: 20px;
 
     div {
         position: absolute;
@@ -51,6 +51,12 @@
        div{
         background: var(--blue_500);
        }
+      }
+
+      &.white{
+        div{
+          background: #fff;
+         }
       }
   }
 
