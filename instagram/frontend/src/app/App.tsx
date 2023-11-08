@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import HomePage from "@/pages/HomePage/ui/HomePage";
 import { LoginLazyPage } from "@/pages/LoginPage/ui/LoginLazyPage";
 import { RegisterLazyPage } from "@/pages/RegisterPage/ui/RegisterLazyPage";
-import { Suspense } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import { Spinner } from "@/shared/ui";
 import { useSelector } from "react-redux";
 import { getAuthData } from "@/entities/User";
