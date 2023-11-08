@@ -1,6 +1,9 @@
 import { lazy } from "react";
 
-export const LoginLazyPage = lazy(async () => await new Promise((res) => {
-  // @ts-expect-error
-  setTimeout(() => { res(import('./LoginPage')); }, 1000)
-}))
+export const LoginLazyPage = lazy(
+  async () =>
+    await new Promise((res) => {
+      // @ts-ignore
+      setTimeout(() => res(import("./LoginPage")), 1000);
+    })
+);

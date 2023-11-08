@@ -7,3 +7,5 @@ export type {
 } from "./StoreProvider/config/StateSchema";
 
 export { AppDispatch } from "./StoreProvider/config/store";
+
+export { default as RouteProvider } from "./RouteProvider/ui/RouteProvider";
