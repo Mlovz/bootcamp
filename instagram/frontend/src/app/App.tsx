@@ -1,8 +1,8 @@
+import { useSelector } from "react-redux";
 import { getAuthToken, getFetchAuthUser } from "@/entities/User";
 import { LOCAL_STORAGE_TOKEN } from "@/shared/consts/localstorage";
 import { useAppDispatch } from "@/shared/hooks/useAppDispatch";
 import { Suspense, useEffect } from "react";
-import { useSelector } from "react-redux";
 import { Navbar, PageLoader } from "../widgets";
 import { RouteProvider } from "./provider";
 
