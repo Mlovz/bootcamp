@@ -152,3 +152,86 @@
 // console.log("4");
 
 // 2 4 3 1
+
+// console.log(("10" && 1) || 20); //
+
+// const a = null;
+
+// if (a) {
+//   console.log(123);
+// } else {
+//   console.log("555");
+// }
+
+// console.log("1");
+
+// setTimeout(() => {
+//   console.log("2");
+// });
+
+// Promise.resolve().then(() => console.log("3"));
+// Promise.resolve().then(() =>
+//   setTimeout(() => {
+//     console.log("4");
+//   })
+// );
+// Promise.resolve().then(() => console.log("5"));
+
+// setTimeout(() => {
+//   console.log("6");
+// });
+
+// console.log("7");
+
+// 1 7 3 5 4 2 6
+
+// function foo() {
+//   let y = 10;
+
+//   return {
+//     y: 20,
+//     getOne: () => {
+//       console.log(this.y);
+//     },
+//     getTwo: function () {
+//       console.log(this.y);
+//     },
+//   };
+// }
+
+// const newObj = foo();
+
+// newObj.getOne(); // undefined
+// newObj.getTwo(); // 20
+
+// const trbr = foo.call({ y: 40 });
+
+// trbr.getOne(); // 40
+// trbr.getTwo(); // 20
+
+// function getNames(user) {
+//   console.log("Name: ", user.name, "age: ", user.age);
+// }
+
+// const user = {
+//   name: "Test",
+//   age: 20,
+// };
+
+// getNames(user);
+
+// const sum = (a, b) => {
+//   return a + b;
+// };
+
+// const minus = (a, b) => {
+//   return a - b;
+// };
+
+// function calculate(a, b, operation, newMinus) {
+//   return a + b + operation(a, b) + newMinus + this.age;
+// }
+
+// const res = calculate.call({ age: 20 }, 10, 10, sum, minus(10, 20));
+
+// console.log(res);
