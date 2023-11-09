@@ -1,4 +1,4 @@
-import { type FC, type ReactNode } from "react";
+import { memo, type FC, type ReactNode } from "react";
 import cls from "./Text.module.scss";
 import { classNames } from "@/shared/lib/classNames";
 
@@ -50,7 +50,7 @@ interface TextProps {
   color?: TextColor;
 }
 
-export const Text: FC<TextProps> = (props) => {
+export const Text: FC<TextProps> = memo((props) => {
   const {
     children,
     as = "h2",
@@ -81,4 +81,4 @@ export const Text: FC<TextProps> = (props) => {
   };
 
   return getAS[as];
-};
+});

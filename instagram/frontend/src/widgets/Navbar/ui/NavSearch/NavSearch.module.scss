@@ -27,4 +27,40 @@
     padding: 0 6px;
     color: var(--inverted-main-color);
   }
+
+  .list {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    border: 1px solid var(--border);
+    background: var(--main-color-body);
+    min-height: 100px;
+    // max-height: 400px;
+    z-index: 10;
+    padding: 10px;
+    border-radius: 2px;
+    overflow-y: auto;
+    > div {
+      > div {
+        padding: 4px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .close {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    background: var(--border);
+    cursor: pointer;
+  }
 }

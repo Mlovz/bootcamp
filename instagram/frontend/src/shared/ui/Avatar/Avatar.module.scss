@@ -11,6 +11,14 @@
     height: 100%;
     object-fit: cover;
   }
+
+  .noImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--border);
+    width: 100%;
+  }
 }
 
 .size22 {
@@ -19,6 +27,10 @@
   min-width: 22px;
   min-height: 22px;
   height: 22px;
+  .noImage {
+    width: inherit;
+    height: inherit;
+  }
 }
 
 .size32 {
@@ -27,6 +39,13 @@
   min-width: 32px;
   min-height: 32px;
   height: 32px;
+  .noImage {
+    max-width: 32px;
+    max-height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    height: 32px;
+  }
 }
 
 .size56 {
@@ -35,6 +54,13 @@
   min-width: 56px;
   min-height: 56px;
   height: 56px;
+  .noImage {
+    max-width: 56px;
+    max-height: 56px;
+    min-width: 56px;
+    min-height: 56px;
+    height: 56px;
+  }
 }
 
 .size150 {
@@ -43,6 +69,13 @@
   min-width: 150px;
   min-height: 150px;
   height: 150px;
+  .noImage {
+    max-width: 150px;
+    max-height: 150px;
+    min-width: 150px;
+    min-height: 150px;
+    height: 150px;
+  }
 }
 
 .default {

@@ -3,8 +3,8 @@ export interface User {
   avatar: string;
   createdAt: Date;
   email: string;
-  followers: string[];
-  following: string[];
+  followers: User[];
+  following: User[];
   fullname: string;
   gender: string;
   mobile: string;
@@ -22,4 +22,5 @@ export interface User {
 export interface UserState {
   user: User;
   token: string;
+  loading: boolean;
 }
