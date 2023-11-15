@@ -1,9 +1,8 @@
-import { LoginForm } from '@/features/auth'
+import { LoginForm } from "@/features/auth";
+import { useEffect } from "react";
 
 const LoginPage = () => {
-  return (
-      <LoginForm/>
-  )
-}
+  return <LoginForm />;
+};
 
-export default LoginPage
+export default LoginPage;

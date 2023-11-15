@@ -1,10 +1,8 @@
-import { RegisterForm } from '@/features/auth'
-import React from 'react'
+import { RegisterForm } from "@/features/auth";
+import React, { useEffect } from "react";
 
 const RegisterPage = () => {
-  return (
-      <RegisterForm/>
-  )
-}
+  return <RegisterForm />;
+};
 
-export default RegisterPage
+export default RegisterPage;

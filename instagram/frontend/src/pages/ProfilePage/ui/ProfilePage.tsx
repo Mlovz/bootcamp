@@ -24,7 +24,7 @@ const ProfilePage = () => {
 
   return (
     <div className={cls.profile}>
-      <ProfileInfo id={id} users={profileUsers} />
+      {/* <ProfileInfo id={id} users={profileUsers} /> */}
     </div>
   );
 };
